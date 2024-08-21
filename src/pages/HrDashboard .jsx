@@ -7,11 +7,11 @@ import { Card, CardBody, CardTitle, Row, Col, Button, Table, Input, Dropdown, Dr
 import { FaUser, FaCog, FaBell, FaSearch,FaSignOutAlt } from 'react-icons/fa';
 import './Style.scss';
 import { MdAdd, MdOutlineRemove } from "react-icons/md";
-import ExpandedView from "../components/ExpanedView";
+import AdminExpandedView from '../components/AdminExpandedView';
 import { dummyResponse } from "../utils/constants";
 import { useNavigate } from "react-router-dom";
 
-const Dashboard = () => {
+const HrDashboard = () => {
   const navigate = useNavigate();
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [expandedRow, setExpandedRow] = useState(null);
@@ -27,6 +27,9 @@ const Dashboard = () => {
 
   const handleDetailsClick = (detailId) => {
     setExpandedDetails(expandedDetails === detailId ? null : detailId);
+    navigate('/Hrviewmore');
+    console.log(dummyResponse[detailId]);
+
   };
 
   return (
@@ -71,7 +74,7 @@ const Dashboard = () => {
       {/* Existing Dashboard Content */}
       <Row>
       <Col md="12">
-      <div class="page-header-title"><h5 class="m-b-10">Education Fees</h5></div>
+      <div class="page-header-title"><h5 class="m-b-10">Test Education Fees</h5></div>
       </Col>
       </Row>
       <Row>
@@ -179,16 +182,12 @@ const Dashboard = () => {
                     </td>
                   </tr>
                   {expandedRow === index && (
-                    <ExpandedView
+                    <AdminExpandedView
                       index={index}
                       handleDetailsClick={handleDetailsClick}
-                      expandedDetails={expandedDetails}
-                      stages={data.stages}
-                      statusTitle={data.statusTitle}
-                      detailsTitle={data.detailsTitle}
-                      detailsSubTitle={data.detailsSubTitle}
-                      detailsFooter={data.detailsFooter}
-                      detailsFooter2={data.detailsFooter2}
+                      statusTitle={"This is a request for the Approval of Education Fee Reimbersement"}
+                      childrenCount={2}
+                      amount={15000}
                     />
                   )}
                 </React.Fragment>
@@ -201,4 +200,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default HrDashboard;

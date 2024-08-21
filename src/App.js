@@ -4,7 +4,8 @@ import Dashboard from './pages/Dashboard';
 import EducationReimbursementForm from './pages/EducationReimbursementForm';
 import EducationReimbursementView from './pages/EducationReimbursementView';
 import LoginPage from './pages/LoginPage';
-
+import HrDashboard from './pages/HrDashboard ';
+import Hrviewdetail from './pages/Hrviewdetail';
 function App() {
   return (
     <Router>
@@ -14,6 +15,8 @@ function App() {
         <Route path="/Dashboard" element={<Dashboard/>} />     
         <Route path="/Eduform" element={<EducationReimbursementForm />} />
         <Route path="/Eduview" element={<EducationReimbursementView />} />
+        <Route path="/Hrdashboard" element={<HrDashboard />} />
+        <Route path="/Hrviewmore" element={<Hrviewdetail />} />
       </Routes>
     </Router>
   );
