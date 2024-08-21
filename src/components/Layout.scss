@@ -1,0 +1,173 @@
+// Variables
+$sidebar-bg-color: #0F497A;
+$sidebar-width-open: 250px;
+$sidebar-width-collapsed: 60px;
+$content-bg-color: #f8f9fa;
+$transition-duration: 0.3s;
+$logo-height-open: 50px;
+$logo-height-collapsed: 50px;
+$submenu-indent: 20px;
+$submenu-padding: 10px;
+$submenu-bg-color: #495057;
+
+// Layout container
+.layout {
+  display: flex;
+  height: 100vh;
+
+  // Sidebar styles
+  .sidebar {
+    background-color: $sidebar-bg-color;
+    color: white;
+    transition: width $transition-duration ease;
+    overflow: hidden;
+    white-space: nowrap;
+    min-height:1000px;
+    background-image: url(https://img.freepik.com/premium-photo/blue-white-background-with-wavy-design_916191-6876.jpg?w=740), linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-position: center;
+
+    &.sidebar-open {
+      width: $sidebar-width-open;
+    }
+
+    &.sidebar-collapsed {
+      width: $sidebar-width-collapsed;
+    }
+
+    .sidebar-header {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+
+      .logo-expanded {
+        height: $logo-height-open;
+        transition: height $transition-duration ease;
+      }
+
+      .logo-collapsed {
+        height: $logo-height-collapsed;
+        transition: height $transition-duration ease;
+      }
+    }
+
+    .sidebar-menu {
+      list-style-type: none;
+      padding: 30px 0px 0px 0px;
+      margin: 0;
+
+      li {
+        display: flex;
+        align-items: center;
+        padding: 20px 20px;
+        cursor: pointer;
+        color: white;
+        position: relative;
+
+        .menu-icon-item {
+          font-size: 1.2em;
+          margin-right: 10px;
+        }
+
+        &:hover {
+          background-color: darken($sidebar-bg-color, 10%);
+        }
+
+        // Submenu styles
+        &.settings-item {
+          .submenu {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            padding-left: $submenu-indent;
+            display: none; // Hide submenu by default
+            background-color: #0f497a;
+            position: absolute;
+            left: 0;
+            top: 100%; // Position below the settings item
+            width: 100%; // Make the submenu span the width of the sidebar
+
+            &.open {
+              display: block; // Show submenu when open
+            }
+
+            .submenu-item {
+              display: flex;
+              align-items: center;
+              padding: $submenu-padding;
+              cursor: pointer;
+              color: white;
+
+              .submenu-icon {
+                font-size: 1em;
+                margin-right: 10px;
+              }
+              .submenu-text{
+                padding-right: 10px;
+                color: rgb(255, 255, 255);
+              }
+
+              &:hover {
+                background-color: #092e4d;
+              }
+            }
+          }
+
+          .submenu-arrow {
+            margin-left: auto;
+            padding-left: 10px;
+            font-size: 20px;
+            transition: transform $transition-duration ease;
+
+            &.rotated {
+              transform: rotate(180deg);
+              padding-right: 10px;
+            font-size: 20px;
+            }
+          }
+        }
+      }
+
+      // Hide menu text when collapsed
+      &.sidebar-collapsed .menu-text {
+        display: none;
+      }
+
+      &.sidebar-collapsed .submenu-arrow {
+        display: none;
+      }
+    }
+  }
+
+  // Content area
+  .content {
+    flex-grow: 1;
+    padding: 5px 20px 20px 20px;
+    background-color: $content-bg-color;
+    transition: margin-left $transition-duration ease;
+
+    &.sidebar-open {
+      margin-left: $sidebar-width-open;
+    }
+
+    &.sidebar-collapsed {
+      margin-left: $sidebar-width-collapsed;
+    }
+  }
+}
+html, body {
+  height:100%;
+  font-family: Calibri, 'Open Sans', sans-serif!important;
+}
+
+.sidebar-menu li.active, 
+.submenu-item.active {
+  background-color: #092e4d; // Set your desired background color
+  color: #fff; // Set your desired text color
+}
+
+.sidebar-menu li.active .menu-icon-item,
+.submenu-item.active .submenu-icon {
+  color: #fff; // Set your desired icon color for active menu item
+}

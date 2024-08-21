@@ -1,0 +1,194 @@
+.card{
+    border: none!important;
+    border-radius: 0px!important;
+    box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+}
+.cardheader{
+    display: flex; 
+    justify-content: space-between;
+}
+.btn-primary {
+    background-color: #050554!important;
+    border-color: #07075e!important;
+    border-radius: 20px!important;
+    box-shadow: 1px 6px 6px 0px rgb(2 17 24 / 28%);
+}
+.btn{
+    margin-right: 10px;
+    
+}
+.btn-secondary {
+    background-color: #f3f3f7!important;
+    border-color: #f2f2f5!important;
+    border-radius: 20px!important;
+    color:#050554!important;
+    box-shadow: 1px 6px 6px 0px rgb(2 17 24 / 28%);
+}
+.dropdown {
+    right: 10px;
+}
+.card-body h2 {
+  font-weight: 500;
+  font-size: 2.5rem;
+}
+.icon-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background-color: #0F497A;
+    border-radius: 50%;
+    color: white;
+    margin-right: 7px;
+  }
+  button.dropdown-toggle.btn.btn-link {
+    font-size: 14px;
+    color: #000;
+}
+.search-container {
+    position: relative;
+  }
+  
+  .search-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #aaa; // Adjust the color as needed
+  }
+  .cog-icon {
+    position: relative;
+    border: 2px solid #ccc; /* Outline color */
+    border-radius: 50%; /* Optional: Rounded corners for the outline */
+    padding: 4px; /* Space between the icon and the border */
+    margin-right: 10px;
+  }
+  
+  .cog-icon svg {
+    stroke: #333; /* Outline color of the SVG path */
+    stroke-width: 2px; /* Width of the outline */
+  }
+  .usertext{
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 10px;
+  }
+  .notification-icon {
+    position: relative;
+    display: inline-block; /* Ensure it's in-line with other content if needed */
+  }
+  
+  
+  
+  .notification-dot {
+    position: absolute;
+    top: 5px;
+    right: 43px;
+    height: 15px;
+    width: 15px;
+    background-color: rgb(201 4 4);
+    border-radius: 50%;
+    border: 2px solid white;
+    transform: translate(50%, -50%);
+    z-index: 10;
+
+  }
+  .bell-icon {
+    position: relative;
+    color:#555;
+   
+  }
+  .search-container .form-control {    
+    padding: .1rem .75rem;
+  }
+  
+  .cardimage{
+    width: 60px;
+    height: auto;
+    position: absolute;
+ 
+    right: 20px;
+    top: 40px;
+  }
+  .form-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .input-group-text {
+    background-color: #f8f9fa;
+    border-left: 0;
+    border-radius: 0 5px 5px 0;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+  }
+  
+  button {
+    border-radius: 20px;
+    padding: 5px 20px;
+  }
+  
+  .form-text {
+    margin-top: 5px;
+  }
+  
+  .view-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+    h5 {
+      color: #333;
+    }
+  
+    h6 {
+      color: #555;
+      margin-bottom: 15px;
+    }
+  
+    .attachments-section {
+      .btn-link {
+       font-size: 14px;
+      color: #0f66b1;
+      }
+    }
+  
+    .approvers-section img {
+      width: 30px;
+      height: 30px;
+    }
+  
+    .btn {
+      border-radius: 20px;
+      
+    }
+  }
+  .expand.btn{
+    padding: 0px !important;
+  }
+  .formbuttons.btn{
+    padding: 5px 20px;
+  }
+  .btnlabel{
+    font-weight: 600;
+    font-size: 14px;
+    margin-right: 10px;
+  }
+  .uplbtn{   
+    font-weight: 600;
+    color: #ffffff!important;
+    background-color: #050554!important;
+  }
+  table.viewtable th {
+    color: #000;
+    background-color: #f8f9fa;
+    border: transparent;
+}
+table.viewtable td{
+  border: transparent;
+}
