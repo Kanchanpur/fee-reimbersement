@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaChevronDown } from 'react-icons/fa';
+import { FaChevronDown, FaUserTie } from 'react-icons/fa';
 import logo from '../Assets/images/logo.png'; // Image for expanded sidebar
 import logosmall from '../Assets/images/logo-small.png'; // Image for collapsed sidebar
 import './Layout.scss'; // Import the SCSS file
@@ -7,12 +7,12 @@ import { RiTeamLine } from "react-icons/ri";
 import { MdOutlineLibraryBooks, MdCastForEducation } from "react-icons/md";
 import { SlNote } from "react-icons/sl";
 import { AiOutlineIdcard } from "react-icons/ai";
-
+import { useNavigate } from "react-router-dom";
 const Layout = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false); // Sidebar is initially collapsed
   const [settingsOpen, setSettingsOpen] = useState(false); // To control submenu visibility
   const [activeMenu, setActiveMenu] = useState("Education Fees"); // Track active menu item
-
+  const navigate = useNavigate();
   const handleSidebarHover = (isHovering) => {
     setIsOpen(isHovering);
   };
@@ -49,6 +49,10 @@ const Layout = ({ children }) => {
             <MdOutlineLibraryBooks className="menu-icon-item" />
             {isOpen && <span className="menu-text">Learner Self Service</span>}
           </li>
+          <li className={activeMenu === "HR Self Service" ? "active" : ""} onClick={() => navigate("/Hrdashboard")}>
+            <FaUserTie className="menu-icon-item" />
+            {isOpen && <span className="menu-text">HR Self Service</span>}
+          </li>
           <li className={`settings-item ${settingsOpen ? 'open' : ''}`} onClick={toggleSettings}>
             <div className="menu-item">
               <MdOutlineLibraryBooks className="menu-icon-item" />
@@ -64,12 +68,13 @@ const Layout = ({ children }) => {
                 <AiOutlineIdcard className="submenu-icon" />
                 {isOpen && <span className="submenu-text">My Immigration</span>}
               </li>
-              <li className={`submenu-item ${activeMenu === "Education Fees" ? "active" : ""}`} onClick={() => handleMenuClick("Education Fees")}>
+              <li className={`submenu-item ${activeMenu === "Education Fees" ? "active" : ""}`} onClick={() => navigate("/Dashboard")}>
                 <MdCastForEducation className="submenu-icon" />
                 {isOpen && <span className="submenu-text">Education Fees</span>}
               </li>
             </ul>
           </li>
+        
         </ul>
       </div>
       <div className="content">

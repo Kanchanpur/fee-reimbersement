@@ -50,7 +50,7 @@ const EducationReimbursementView = () => {
           </Col>
         </Row>
       </div>
-      <div class="page-header-title"><h5 class="m-b-10">Child Education Reimbursement Form</h5></div>
+      <div class="page-header-title"><h5 class="m-b-10">Child Education Reimbursement </h5></div>
     <Card className="view-container mt-3">
     <h5>View Details</h5>
 

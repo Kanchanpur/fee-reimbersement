@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import Layout from '../components/Layout';
-import child from '../Assets/images/child.png';
-import totamt from '../Assets/images/totamt.png';
-import penamt from '../Assets/images/penamt.png';
+import employee from '../Assets/images/employee.png';
+import totreq from '../Assets/images/totreq.png';
+import penreq from '../Assets/images/penreq.png';
+import closereq from '../Assets/images/closereq.png';
 import { Card, CardBody, CardTitle, Row, Col, Button, Table, Input, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { FaUser, FaCog, FaBell, FaSearch,FaSignOutAlt } from 'react-icons/fa';
 import './Style.scss';
@@ -74,51 +75,67 @@ const HrDashboard = () => {
       {/* Existing Dashboard Content */}
       <Row>
       <Col md="12">
-      <div class="page-header-title"><h5 class="m-b-10">Test Education Fees</h5></div>
+      <div class="page-header-title"><h5 class="m-b-10">HR Dashboard</h5></div>
       </Col>
       </Row>
       <Row>
-        <Col md="4">
+        <Col md="3">
           <Card>
             <CardBody>
-              <CardTitle>No of Children</CardTitle>
+              <CardTitle>Total Employees</CardTitle>
               <img
-                src={child}
-                alt="child"
+                src={employee}
+                alt="employee"
                 style={{
-                  width: "60px",
+                  width: "50px",
                   height: "auto",
                 }}   className='cardimage'
               />
-              <h2>2</h2>
+              <h2 className="text-secondary">5000</h2>
             </CardBody>
           </Card>
         </Col>
-        <Col md="4">
+        <Col md="3">
           <Card>
             <CardBody>
-              <CardTitle>Total Fee Reimbursed – Current Year</CardTitle>
+              <CardTitle>Total Request</CardTitle>
               <img
-                src={totamt}
-                alt="totamt"
+                src={totreq}
+                alt="requests"
                 style={{
-                  width: "60px",
+                  width: "50px",
                   height: "auto",
                 }}   className='cardimage'
               />
-              <h2 className="text-success">5000</h2>
+              <h2 className="text-primary">6000</h2>
             </CardBody>
           </Card>
         </Col>
-        <Col md="4">
+        <Col md="3">
           <Card>
             <CardBody>
-              <CardTitle>Pending Fees to Reimburse – Current Year</CardTitle>
+              <CardTitle>Closed Requests</CardTitle>
               <img
-                src={penamt}
-                alt="penamt"
+                src={closereq}
+                alt="closereq"
                 style={{
-                  width: "60px",
+                  width: "50px",
+                  height: "auto",
+                }}
+                className='cardimage'
+              />
+              <h2 className="text-success">4000</h2>
+            </CardBody>
+          </Card>
+        </Col><Col md="3">
+          <Card>
+            <CardBody>
+              <CardTitle>Pending Requests</CardTitle>
+              <img
+                src={penreq}
+                alt="penreq"
+                style={{
+                  width: "50px",
                   height: "auto",
                 }}
                 className='cardimage'
@@ -127,13 +144,24 @@ const HrDashboard = () => {
             </CardBody>
           </Card>
         </Col>
+
       </Row>
   
       <Card className="mt-4">
         <CardBody>
-          <div class="cardheader">
-          <CardTitle>Request Details</CardTitle>
-          <Button color="primary" className="mb-3"  onClick={() => navigate("/Eduform")}>Fee Reimbursement Request</Button></div>
+         
+            <Row>
+            <Col md="10">
+          <CardTitle><h5>Request Details </h5></CardTitle>
+          </Col>
+          <Col md="2">
+          <Input type="select" name="selectChild" id="selectChild" style={{Color:"#0b407a"}}>
+                  <option>Pending</option>
+                  <option>Approved</option>
+                </Input>
+                </Col>
+                </Row>
+       
           <Table responsive>
             <thead>
               <tr>

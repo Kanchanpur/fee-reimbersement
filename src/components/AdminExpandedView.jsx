@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Col, Row } from "reactstrap";
-
+import { FaCheck,FaTimes} from 'react-icons/fa';
+import '../pages/Style.scss';
 const AdminExpandedView = function ({
   index,
   handleDetailsClick,
@@ -18,25 +19,21 @@ const AdminExpandedView = function ({
             <p>Amount: {amount}</p>
           </Col>
           <Col
-            md="2"
-            className="d-flex justify-content-center align-items-center"
+            md="4"
+            className="d-flex justify-content-right align-items-center"
           >
             <Button
               color="success"
-              style={{ width: "100%" }}
+              className="appr btn-success"
             >
-              Accept
+             <FaCheck/> Accept
             </Button>
-          </Col>
-          <Col
-            md="2"
-            className="d-flex justify-content-center align-items-center"
-          >
+          
             <Button
               color="danger"
-              style={{ width: "100%" }}
+              className="rej btn-danger"
             >
-              Reject
+             <FaTimes/> Reject
             </Button>
           </Col>
           <Col
@@ -48,7 +45,7 @@ const AdminExpandedView = function ({
               style={{ width: "100%" }}
               onClick={() => handleDetailsClick(index)}
             >
-              Advanced Details
+              More Details
             </Button>
           </Col>
         </Row>

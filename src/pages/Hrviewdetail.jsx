@@ -2,7 +2,7 @@ import React ,{ useState } from 'react';
 import { Container, Row, Col, Table, Button } from 'reactstrap';
 import { Card, CardBody, CardTitle,  Dropdown, Input, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { FaFileAlt } from 'react-icons/fa';
-import { FaUser, FaCog, FaBell, FaSearch, FaPlus, FaSignOutAlt } from 'react-icons/fa';
+import { FaUser, FaCog, FaBell, FaSearch, FaPlus, FaSignOutAlt,FaCheck,FaTimes } from 'react-icons/fa';
 import './Style.scss';
 import { FaPaperclip } from 'react-icons/fa'; 
 import Layout from '../components/Layout';
@@ -50,7 +50,7 @@ const Hrviewdetail = () => {
           </Col>
         </Row>
       </div>
-      <div class="page-header-title"><h5 class="m-b-10">Child Education Reimbursement Form</h5></div>
+      <div class="page-header-title"><h5 class="m-b-10">Child Education Reimbursement </h5></div>
     <Card className="view-container mt-3">
     <h5>View Details</h5>
 
@@ -113,10 +113,10 @@ const Hrviewdetail = () => {
 
       {/* Action Buttons */}
       <div className="text-right" style={{textAlign:'right'}}>
-        <Button color="primary" className="mr-2">Save For Later</Button>
-        <Button color="primary">Submit</Button>
+        <Button color="" className="mr-2 appr btn-success"> <FaCheck/> Approve</Button>
+        <Button color="" className='rej btn-danger'> <FaTimes/> Reject</Button>
         <Button color="secondary" className="mr-2">Cancel</Button>  
-        <Button color="primary" className=" formbuttons mr-2"  onClick={() => navigate("/Dashboard")}>Back</Button> 
+        <Button color="primary" className=" formbuttons mr-2"  onClick={() => navigate("/Hrdashboard")}>Back</Button> 
       </div>
     </Card>
     </Layout>

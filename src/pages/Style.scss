@@ -192,3 +192,25 @@
 table.viewtable td{
   border: transparent;
 }
+.appr.btn-success{
+  background-color: #fff;
+    color: green;
+    border: 2px solid green;
+    border-radius: 20px;
+    padding: 5px 10px;
+    border-radius: 20px !important;
+    box-shadow: 1px 6px 6px 0px rgba(2, 17, 24, 0.28);
+}
+.rej.btn-danger{
+  background-color: #fff;
+    color: #c50604;
+    border: 2px solid #c50517;
+    border-radius: 20px;
+    padding: 5px 10px;
+    border-radius: 20px !important;
+    box-shadow: 1px 6px 6px 0px rgba(2, 17, 24, 0.28);
+}
+.justify-content-right {
+  justify-content: right;
+}
+
